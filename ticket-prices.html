@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="website-style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/5e71aa76e3.js" crossorigin="anonymous"></script>
+    <link rel="icon" href="favicon-256.ico" type="image/x-icon">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <title>Ticket Prices | Ace Cinema</title>
+    <style>
+        .pricing-container {
+            padding: 120px 5% 60px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .pricing-hero {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .pricing-hero h1 {
+            font-size: 3rem;
+            background: linear-gradient(135deg, #ffd700, #ffed4a);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 15px;
+        }
+
+        .pricing-hero p {
+            color: #888;
+            font-size: 1.1rem;
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-bottom: 50px;
+        }
+
+        .pricing-card {
+            background: linear-gradient(145deg, #1a1a1a, #0d0d0d);
+            border-radius: 20px;
+            padding: 30px;
+            border: 1px solid #222;
+            transition: transform 0.3s, border-color 0.3s;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(255, 204, 0, 0.3);
+        }
+
+        .pricing-card.featured {
+            border: 2px solid #ffd700;
+            position: relative;
+        }
+
+        .pricing-card.featured::before {
+            content: 'BEST VALUE';
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(135deg, #ffd700, #ffcc00);
+            color: #000;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 700;
+        }
+
+        .pricing-card h2 {
+            color: #ffd700;
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .pricing-card .price {
+            font-size: 2.5rem;
+            color: #fff;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .pricing-card .price span {
+            font-size: 1rem;
+            color: #888;
+            font-weight: 400;
+        }
+
+        .pricing-card ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .pricing-card ul li {
+            color: #ccc;
+            padding: 10px 0;
+            border-bottom: 1px solid #222;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .pricing-card ul li:last-child {
+            border-bottom: none;
+        }
+
+        .pricing-card ul li i {
+            color: #ffd700;
+            font-size: 0.85rem;
+        }
+
+        .pricing-note {
+            background: rgba(255, 204, 0, 0.1);
+            border: 1px solid rgba(255, 204, 0, 0.3);
+            border-radius: 15px;
+            padding: 25px;
+            text-align: center;
+        }
+
+        .pricing-note h3 {
+            color: #ffd700;
+            margin-bottom: 10px;
+        }
+
+        .pricing-note p {
+            color: #888;
+            font-size: 0.95rem;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: #ffd700;
+            text-decoration: none;
+            margin-bottom: 30px;
+            transition: opacity 0.3s;
+        }
+
+        .back-link:hover {
+            opacity: 0.7;
+        }
+
+        @media (max-width: 768px) {
+            .pricing-container {
+                padding: 100px 4% 40px;
+            }
+            .pricing-hero h1 {
+                font-size: 2rem;
+            }
+            .pricing-card {
+                padding: 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <h1 class="owner-sty">
+            <a href="index.html"><img src="AceCinema2-removebg-preview.png" style="width: 130px" alt="Ace Cinema"></a>
+        </h1>
+        <ul class="features">
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="index.html#filmDisplay">BOOK TICKETS</a></li>
+            <li><a href="food.html">FOOD & DRINKS</a></li>
+        </ul>
+        <div style="flex: 1;"></div>
+
+        <div class="mobile-navbar">
+            <div class="menu-area">
+                <button id="cartBtn">
+                    <i class="fa-solid fa-bars fa-lg"></i>
+                </button>
+            </div>
+
+            <div class="menu-container" id="menuContainer">
+                <ul class="mobile-features">
+                    <button id="closeBtn">
+                        <i class="fa-solid fa-circle-xmark fa-2x" style="color: #f2f2f2"></i>
+                    </button>
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="index.html#filmDisplay">BOOK TICKETS</a></li>
+                    <li><a href="food.html">FOOD & DRINKS</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="pricing-container">
+        <a href="index.html" class="back-link" data-aos="fade-right" data-aos-duration="400">
+            <i class="fa-solid fa-arrow-left"></i> Back to Home
+        </a>
+
+        <div class="pricing-hero" data-aos="fade-up" data-aos-duration="600">
+            <h1><i class="fa-solid fa-ticket"></i> Ticket Prices</h1>
+            <p>Choose the experience that suits you</p>
+        </div>
+
+        <div class="pricing-grid">
+            <div class="pricing-card" data-aos="fade-up" data-aos-duration="600" data-aos-delay="100">
+                <h2><i class="fa-solid fa-couch"></i> Standard</h2>
+                <div class="price">₦1,500 <span>/ ticket</span></div>
+                <ul>
+                    <li><i class="fa-solid fa-check"></i> Regular seating</li>
+                    <li><i class="fa-solid fa-check"></i> HD projection</li>
+                    <li><i class="fa-solid fa-check"></i> Surround sound</li>
+                    <li><i class="fa-solid fa-check"></i> Standard concessions</li>
+                </ul>
+            </div>
+
+            <div class="pricing-card featured" data-aos="fade-up" data-aos-duration="600" data-aos-delay="200">
+                <h2><i class="fa-solid fa-gem"></i> The Cube</h2>
+                <div class="price">₦5,000 <span>/ ticket</span></div>
+                <ul>
+                    <li><i class="fa-solid fa-check"></i> Luxury recliner seats</li>
+                    <li><i class="fa-solid fa-check"></i> 4K Laser projection</li>
+                    <li><i class="fa-solid fa-check"></i> Dolby Atmos sound</li>
+                    <li><i class="fa-solid fa-check"></i> In-seat dining</li>
+                    <li><i class="fa-solid fa-check"></i> Welcome drink</li>
+                </ul>
+            </div>
+
+            <div class="pricing-card" data-aos="fade-up" data-aos-duration="600" data-aos-delay="300">
+                <h2><i class="fa-solid fa-users"></i> Group (5+)</h2>
+                <div class="price">₦1,200 <span>/ ticket</span></div>
+                <ul>
+                    <li><i class="fa-solid fa-check"></i> 20% group discount</li>
+                    <li><i class="fa-solid fa-check"></i> Reserved seating</li>
+                    <li><i class="fa-solid fa-check"></i> HD projection</li>
+                    <li><i class="fa-solid fa-check"></i> Priority booking</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="pricing-note" data-aos="fade-up" data-aos-duration="600" data-aos-delay="400">
+            <h3><i class="fa-solid fa-info-circle"></i> Special Offers</h3>
+            <p>Students & Seniors get 15% off on weekdays. Children under 5 enter free with a paying adult.</p>
+        </div>
+    </div>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('cartBtn').addEventListener('click', () => {
+            document.getElementById('menuContainer').classList.add('active');
+        });
+        document.getElementById('closeBtn').addEventListener('click', () => {
+            document.getElementById('menuContainer').classList.remove('active');
+        });
+    </script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            once: true,
+            easing: 'ease-out-cubic'
+        });
+    </script>
+</body>
+</html>

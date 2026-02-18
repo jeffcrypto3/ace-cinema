@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=backspace"
+    />
+    <link rel="stylesheet" href="website-style.css" />
+    <link rel="stylesheet" href="food.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/5e71aa76e3.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="icon" href="favicon-256.ico" type="image/x-icon" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <title>See What's on. Book Movies</title>
+  </head>
+
+  <body>
+    <nav class="navbar">
+      <h1 class="owner-sty">
+        <a href="#"></a
+        ><img
+          src="AceCinema2-removebg-preview.png"
+          style="width: 130px"
+          alt=""
+        />
+      </h1>
+      <ul class="features">
+        <li><a href="food.html">FOOD & DRINKS</a></li>
+        <li><a href="cube.html">THE CUBE</a></li>
+        <li><a href="event-cinema.html">EVENT CINEMA</a></li>
+      </ul>
+      <div class="cart-section">
+        <ul class="cart-sty" id="displayCart">
+          CART (<span id="cartCount">0</span>)
+        </ul>
+      </div>
+
+      <div class="mobile-navbar">
+        <div class="menu-area">
+          <button class="cart" id="displayMobileCart">
+            <i class="fa-solid fa-cart-shopping fa-lg"></i>
+            <span id="mobileCartCount">0</span>
+          </button>
+          <button id="cartBtn">
+            <i class="fa-solid fa-bars fa-lg"></i>
+          </button>
+        </div>
+
+        <div class="menu-container" id="menuContainer">
+          <ul class="mobile-features">
+            <button id="closeBtn">
+              <i
+                class="fa-solid fa-circle-xmark fa-2x"
+                style="color: #f2f2f2"
+              ></i>
+            </button>
+            <li><a href="food.html">FOOD & DRINKS</a></li>
+            <li><a href="cube.html">THE CUBE</a></li>
+            <li><a href="event-cinema.html">EVENT CINEMA</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div id="movieDisplay"></div>
+
+    <div class="btn-container">
+      <button id="prevBtn">
+        <i class="fa-solid fa-chevron-left" style="color: #fff"></i>
+      </button>
+      <button id="nxtBtn">
+        <i class="fa-solid fa-chevron-right" style="color: #fff"></i>
+      </button>
+    </div>
+
+    <div class="modal-container" id="heroModalContainer">
+      <div id="heroTrailerModal" class="modal">
+        <div class="modal-content">
+          <iframe
+            id="heroTrailerPlayer"
+            width="100%"
+            height="400px"
+            frameborder="0"
+            allowfullscreen
+          ></iframe>
+          <button id="closeHeroModal">
+            <i
+              class="fa-solid fa-circle-xmark fa-2x"
+              style="color: #f2f2f2"
+            ></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="tri-cont">
+      <div class="showing-now">
+        <div class="showing-btn" data-aos="fade-down" data-aos-duration="600">
+          <button id="showingNow">Now showing</button>
+          <button id="cming-soon">Coming soon</button>
+        </div>
+      </div>
+      <br /><br />
+      <div id="displayFilm">
+        <div id="filmDisplay" class="filmDisplay" data-aos="fade-up" data-aos-duration="800">
+          <div id="ballerinaPage">
+            <img src="Ballerina.webp" alt="" />
+            <br />
+            <h5>Ballerina</h5>
+            <h6>Action</h6>
+          </div>
+          <div id="f1Page">
+            <img src="F1.webp" alt="" />
+            <br />
+            <h5>F1: The Movie</h5>
+            <h6>Action Drama</h6>
+          </div>
+          <div id="hosPage">
+            <img src="HeadsOfState.webp" alt="" />
+            <br />
+            <h5>Heads of State</h5>
+            <h6>Action</h6>
+          </div>
+          <div id="jurassicPage">
+            <img src="Jurassic-world.webp" alt="" />
+            <br />
+            <h5>Jurassic World Rebirth</h5>
+            <h6>Adventure</h6>
+          </div>
+          <div id="supermanPage">
+            <img src="Superman.webp" alt="" />
+            <br />
+            <h5>Superman</h5>
+            <h6>Fantasy Action</h6>
+          </div>
+          <div id="thunderboltsPage">
+            <img src="Thunderbolts.webp" alt="" />
+            <br />
+            <h5>Thunderbolts</h5>
+            <h6>Fantasy Action</h6>
+          </div>
+        </div>
+      </div>
+      <br /><br />
+      <div id="upcoming">
+        <div id="upcoming-film" data-aos="fade-up" data-aos-duration="800">
+          <div>
+            <img src="Oldguard.webp" alt="" />
+            <br />
+            <h5>The Old Guard 2</h5>
+            <h6>Fantasy Action</h6>
+          </div>
+          <div>
+            <img src="KarateKid.webp" alt="" />
+            <br />
+            <h5>Karate Kids: Legends</h5>
+            <h6>Action</h6>
+          </div>
+        </div>
+      </div>
+      <br /><br />
+    </div>
+
+    <!-- Trailer Modal -->
+    <div class="trailer-modal" id="trailerModal">
+      <div class="trailer-content">
+        <iframe
+          id="trailerFrame"
+          width="100%"
+          height="315"
+          frameborder="0"
+          allowfullscreen
+        ></iframe>
+        <button id="closeTrailerBtn">Close</button>
+      </div>
+    </div>
+
+    <!-- Movie Details Modal -->
+    <div class="movie-modal" id="movieModal"> 
+      <div class="movie-modal-content">
+        <button class="close-modal" id="closeMovieModal">&times;</button>
+
+        <div class="movie-modal-body">
+          <img id="moviePoster" src="" alt="Movie Poster" />
+
+          <div class="movie-modal-info">
+            <h2 id="movieTitle"></h2>
+            <p><strong>Genre:</strong> <span id="movieGenre"></span></p>
+            <p><strong>Duration:</strong> <span id="movieDuration"></span></p>
+            <p id="movieSynopsis"></p>
+
+            <div class="movie-buttons">
+              <button id="bookTicketBtn">🎟️ Book Ticket</button>
+              <button id="watchTrailerBtn">🎬 Watch Trailer</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="trailer-modal" id="movieTrailerModal">
+        <div class="trailer-content" id="movieModalContainer">
+          <button class="close-modal" id="closeMovieTrailer">&times;</button>
+          <iframe
+            id="movieTrailerPlayer"
+            width="100%"
+            height="400"
+            frameborder="0"
+            allowfullscreen
+          ></iframe>
+        </div>
+      </div>
+    </div>
+
+    <div class="noodles-cont">
+      <img src="popcorn-drink-filmstrip-img.webp" alt="Cinema Food & Drinks" data-aos="fade-right" data-aos-duration="800" />
+      <div class="noodle-sec-cont" data-aos="fade-left" data-aos-duration="800" data-aos-delay="200">
+        <h1>Movie with Food & Drinks</h1>
+        <br />
+        <p>
+          Cozy up with your favorite film, tasty snacks, refreshing drinks, and
+          of course, popcorn. The right combo makes every scene even
+          better—because movies aren’t just watched, they’re tasted!
+        </p>
+        <br />
+        <a href="food.html"><button>Buy Now</button></a>
+      </div>
+    </div>
+    <br /><br />
+    <div class="last-container">
+      <h1>Lights,camera,fun–onlyatAceCinema!!!</h1>
+    </div>
+    <br /><br />
+    <!-- Cart Sidebar -->
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h2><i class="fa-solid fa-shopping-cart"></i> Your Order</h2>
+            <button class="close-cart" id="closeCart">
+                <i class="fa-solid fa-times"></i>
+            </button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <div class="empty-cart">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <p>Your cart is empty</p>
+            </div>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cartTotal">₦0</span>
+            </div>
+            <button class="checkout-btn" id="checkoutBtn" disabled>
+                <i class="fa-solid fa-credit-card"></i> Checkout
+            </button>
+        </div>
+    </div>
+    <footer>
+      <h1 data-aos="fade-up" data-aos-duration="600">
+        <a href="#"
+          ><img
+            src="AceCinema2-removebg-preview.png"
+            alt=""
+            style="width: 230px"
+        /></a>
+      </h1>
+      <div class="footer-details" data-aos="fade-up" data-aos-duration="600" data-aos-delay="100">
+        <ul>
+          Company
+          <br /><br /><br />
+          <li><a href="about.html">About us</a></li>
+          <br />
+          <li><a href="ticket-prices.html">Ticket prices</a></li>
+          <br />
+          <li><a href="cube.html">Experiences</a></li>
+        </ul>
+        <ul>
+          Terms
+          <br /><br /><br />
+          <li><a href="terms.html">General</a></li>
+          <br />
+          <li><a href="terms.html">Ticket sales</a></li>
+        </ul>
+        <ul>
+          Contact
+          <br /><br /><br />
+          <li><a href="contact.html">Contact us</a></li>
+        </ul>
+        <ul>
+          Legal
+          <br /><br /><br />
+          <li><a href="privacy.html">Privacy policy</a></li>
+        </ul>
+        <ul class="media-icon">
+          Social
+          <br /><br /><br />
+          <li><a href="https://x.com/jcryptech" target="_blank"><i class="fa-brands fa-x-twitter" style="color: #fff; font-size: 1.2rem;"></i></a></li>
+          <br />
+          <li><a href="https://www.linkedin.com/in/oluwaferanmi-adeyemo-28a317380" target="_blank"><i class="fa-brands fa-linkedin" style="color: #fff; font-size: 1.2rem;"></i></a></li>
+        </ul>
+      </div>
+    </footer>
+  </body>
+  <script src="modal.js"></script>
+  <script src="cart-utils.js"></script>
+  <script src="index.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      once: true,
+      easing: 'ease-out-cubic'
+    });
+  </script>
+</html>

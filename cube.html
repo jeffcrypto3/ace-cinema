@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="website-style.css">
+    <link rel="stylesheet" href="cube.css">
+    <link rel="stylesheet" href="food.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/5e71aa76e3.js" crossorigin="anonymous"></script>
+    <link rel="icon" href="favicon-256.ico" type="image/x-icon">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <title>The Cube - Premium Experience | Ace Cinema</title>
+</head>
+<body>
+    <nav class="navbar">
+        <h1 class="owner-sty">
+            <a href="index.html"><img src="AceCinema2-removebg-preview.png" style="width: 130px" alt="Ace Cinema"></a>
+        </h1>
+        <ul class="features">
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="index.html#filmDisplay">BOOK TICKETS</a></li>
+            <li><a href="food.html">FOOD & DRINKS</a></li>
+        </ul>
+        <div class="cart-section">
+            <ul class="cart-sty" id="displayCart">
+                CART (<span id="cartCount">0</span>)
+            </ul>
+        </div>
+
+        <div class="mobile-navbar">
+            <div class="menu-area">
+                <button class="cart" id="displayMobileCart">
+                    <i class="fa-solid fa-cart-shopping fa-lg"></i>
+                    <span id="mobileCartCount">0</span>
+                </button>
+                <button id="cartBtn">
+                    <i class="fa-solid fa-bars fa-lg"></i>
+                </button>
+            </div>
+
+            <div class="menu-container" id="menuContainer">
+                <ul class="mobile-features">
+                    <button id="closeBtn">
+                        <i class="fa-solid fa-circle-xmark fa-2x" style="color: #f2f2f2"></i>
+                    </button>
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="index.html#filmDisplay">BOOK TICKETS</a></li>
+                    <li><a href="food.html">FOOD & DRINKS</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="cube-container">
+        <!-- Hero Section -->
+        <div class="cube-hero">
+            <div class="hero-overlay"></div>
+            <div class="hero-content" data-aos="fade-up" data-aos-duration="800">
+                <h1><i class="fa-solid fa-gem"></i> THE CUBE</h1>
+                <p>Experience cinema like royalty</p>
+            </div>
+        </div>
+
+        <!-- Introduction -->
+        <section class="cube-intro" data-aos="fade-up" data-aos-duration="800">
+            <h2>Premium Private Cinema Experience</h2>
+            <p>The Cube is our exclusive VIP cinema experience designed for those who demand the very best. Enjoy movies in complete privacy with luxury amenities, personalized service, and state-of-the-art technology.</p>
+        </section>
+
+        <!-- Features Grid -->
+        <section class="features-section">
+            <h2 data-aos="fade-up" data-aos-duration="600">What Makes The Cube Special</h2>
+            <div class="features-grid" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fa-solid fa-couch"></i>
+                    </div>
+                    <h3>Luxury Recliners</h3>
+                    <p>Premium leather recliners with extra legroom, blankets, and pillows for ultimate comfort</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fa-solid fa-users"></i>
+                    </div>
+                    <h3>Private Screening</h3>
+                    <p>Exclusive rooms for 6-12 guests. Perfect for date nights, celebrations, or intimate gatherings</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fa-solid fa-utensils"></i>
+                    </div>
+                    <h3>In-Seat Service</h3>
+                    <p>Personal attendant for food and drink orders delivered directly to your seat</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fa-solid fa-volume-high"></i>
+                    </div>
+                    <h3>Dolby Atmos Sound</h3>
+                    <p>Immersive 3D audio that surrounds you from every direction</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fa-solid fa-display"></i>
+                    </div>
+                    <h3>4K Laser Projection</h3>
+                    <p>Crystal clear visuals with HDR and wide color gamut technology</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fa-solid fa-champagne-glasses"></i>
+                    </div>
+                    <h3>Premium Menu</h3>
+                    <p>Gourmet food and beverages including wine, cocktails, and artisan snacks</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pricing Section -->
+        <section class="pricing-section">
+            <h2 data-aos="fade-up" data-aos-duration="600">Pricing & Packages</h2>
+            <div class="pricing-grid" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3>Couple's Package</h3>
+                        <div class="price">₦25,000</div>
+                        <span class="per-person">for 2 people</span>
+                    </div>
+                    <ul class="pricing-features">
+                        <li><i class="fa-solid fa-check"></i> 2 Luxury Recliners</li>
+                        <li><i class="fa-solid fa-check"></i> 2 Drinks of Choice</li>
+                        <li><i class="fa-solid fa-check"></i> Large Popcorn to Share</li>
+                        <li><i class="fa-solid fa-check"></i> Blanket & Pillows</li>
+                        <li><i class="fa-solid fa-check"></i> Any Movie of Choice</li>
+                    </ul>
+                    <button class="book-cube-btn" onclick="showModal('Coming Soon! Contact us at cube@acecinema.ng or call +234 800 ACE 0000 to book your Cube experience.', { type: 'info', title: 'Book The Cube' })">
+                        <i class="fa-solid fa-calendar-check"></i> Book Now
+                    </button>
+                </div>
+                <div class="pricing-card featured">
+                    <div class="popular-tag">Most Popular</div>
+                    <div class="pricing-header">
+                        <h3>Group Package</h3>
+                        <div class="price">₦60,000</div>
+                        <span class="per-person">for up to 6 people</span>
+                    </div>
+                    <ul class="pricing-features">
+                        <li><i class="fa-solid fa-check"></i> 6 Luxury Recliners</li>
+                        <li><i class="fa-solid fa-check"></i> 6 Drinks of Choice</li>
+                        <li><i class="fa-solid fa-check"></i> 2 Large Popcorns</li>
+                        <li><i class="fa-solid fa-check"></i> Nachos Platter</li>
+                        <li><i class="fa-solid fa-check"></i> Blankets & Pillows</li>
+                        <li><i class="fa-solid fa-check"></i> Any Movie of Choice</li>
+                    </ul>
+                    <button class="book-cube-btn" onclick="showModal('Coming Soon! Contact us at cube@acecinema.ng or call +234 800 ACE 0000 to book your Cube experience.', { type: 'info', title: 'Book The Cube' })">
+                        <i class="fa-solid fa-calendar-check"></i> Book Now
+                    </button>
+                </div>
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3>Private Screening</h3>
+                        <div class="price">₦150,000</div>
+                        <span class="per-person">for up to 12 people</span>
+                    </div>
+                    <ul class="pricing-features">
+                        <li><i class="fa-solid fa-check"></i> Entire Cube Room</li>
+                        <li><i class="fa-solid fa-check"></i> 12 Luxury Recliners</li>
+                        <li><i class="fa-solid fa-check"></i> Unlimited Soft Drinks</li>
+                        <li><i class="fa-solid fa-check"></i> Gourmet Platter</li>
+                        <li><i class="fa-solid fa-check"></i> Dedicated Attendant</li>
+                        <li><i class="fa-solid fa-check"></i> Any Movie of Choice</li>
+                        <li><i class="fa-solid fa-check"></i> Custom Lighting & Music</li>
+                    </ul>
+                    <button class="book-cube-btn" onclick="showModal('Coming Soon! Contact us at cube@acecinema.ng or call +234 800 ACE 0000 to book your Cube experience.', { type: 'info', title: 'Book The Cube' })">
+                        <i class="fa-solid fa-calendar-check"></i> Book Now
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="contact-section" data-aos="fade-up" data-aos-duration="800">
+            <h2>Ready to Experience The Cube?</h2>
+            <p>For reservations and inquiries, contact us:</p>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fa-solid fa-phone"></i>
+                    <span>+234 800 ACE CUBE</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fa-solid fa-envelope"></i>
+                    <span>cube@acecinema.ng</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <span>Victoria Island, Lagos</span>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2026 Ace Cinema. All rights reserved.</p>
+    </footer>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h2><i class="fa-solid fa-shopping-cart"></i> Your Order</h2>
+            <button class="close-cart" id="closeCart">
+                <i class="fa-solid fa-times"></i>
+            </button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <div class="empty-cart">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <p>Your cart is empty</p>
+            </div>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cartTotal">₦0</span>
+            </div>
+            <button class="checkout-btn" id="checkoutBtn" disabled>
+                <i class="fa-solid fa-credit-card"></i> Checkout
+            </button>
+        </div>
+    </div>
+
+    <script src="modal.js"></script>
+    <script src="cart-utils.js"></script>
+    <script>
+        // Mobile menu toggle
+        document.getElementById('cartBtn').addEventListener('click', () => {
+            document.getElementById('menuContainer').classList.add('active');
+        });
+        document.getElementById('closeBtn').addEventListener('click', () => {
+            document.getElementById('menuContainer').classList.remove('active');
+        });
+
+        // Cart functionality
+        const cartSidebar = document.getElementById('cartSidebar');
+        const closeCartBtn = document.getElementById('closeCart');
+        const displayCart = document.getElementById('displayCart');
+        const displayMobileCart = document.getElementById('displayMobileCart');
+        const checkoutBtn = document.getElementById('checkoutBtn');
+
+        function openCart() {
+            cartSidebar.classList.add('active');
+            updateCartDisplay();
+        }
+
+        function closeCart() {
+            cartSidebar.classList.remove('active');
+        }
+
+        displayCart.addEventListener('click', openCart);
+        displayMobileCart.addEventListener('click', openCart);
+        closeCartBtn.addEventListener('click', closeCart);
+
+        checkoutBtn.addEventListener('click', () => {
+            window.location.href = 'checkout.html';
+        });
+
+        function updateCartDisplay() {
+            const cart = CartUtils.loadCart();
+            const cartItems = document.getElementById('cartItems');
+            const cartTotal = document.getElementById('cartTotal');
+            const checkoutBtn = document.getElementById('checkoutBtn');
+
+            if (cart.length === 0) {
+                cartItems.innerHTML = `
+                    <div class="empty-cart">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        <p>Your cart is empty</p>
+                    </div>
+                `;
+                cartTotal.textContent = '₦0';
+                checkoutBtn.disabled = true;
+                return;
+            }
+
+            let html = '';
+            let total = 0;
+
+            cart.forEach((item, index) => {
+                if (item.type === 'ticket') {
+                    const totalTickets = (item.tickets?.adult || 0) + (item.tickets?.child || 0) + (item.tickets?.senior || 0) || 1;
+                    total += item.price;
+                    html += `
+                        <div class="cart-item">
+                            <div class="cart-item-header">
+                                <span class="cart-item-name">${item.movie}</span>
+                                <button class="remove-item" onclick="removeFromCart(${index})">
+                                    <i class="fa-solid fa-trash"></i>
+                                </button>
+                            </div>
+                            <div class="cart-item-details">
+                                ${item.date}<br>
+                                ${item.time}<br>
+                                ${totalTickets} ticket(s)<br>
+                                Seats: ${item.seats}
+                            </div>
+                            <div class="cart-item-footer">
+                                <span class="cart-item-price">₦${item.price.toLocaleString()}</span>
+                            </div>
+                        </div>
+                    `;
+                } else {
+                    const itemTotal = item.price * (item.quantity || 1);
+                    total += itemTotal;
+                    html += `
+                        <div class="cart-item">
+                            <div class="cart-item-header">
+                                <span class="cart-item-name">${item.name}</span>
+                                <button class="remove-item" onclick="removeFromCart(${index})">
+                                    <i class="fa-solid fa-trash"></i>
+                                </button>
+                            </div>
+                            <div class="cart-item-details">
+                                ${item.size} × ${item.quantity}
+                            </div>
+                            <div class="cart-item-footer">
+                                <span class="cart-item-price">₦${itemTotal.toLocaleString()}</span>
+                            </div>
+                        </div>
+                    `;
+                }
+            });
+
+            cartItems.innerHTML = html;
+            cartTotal.textContent = '₦' + total.toLocaleString();
+            checkoutBtn.disabled = false;
+        }
+
+        function removeFromCart(index) {
+            const cart = CartUtils.loadCart();
+            cart.splice(index, 1);
+            CartUtils.saveCart(cart);
+            updateCartDisplay();
+            updateCartCount();
+        }
+
+        function updateCartCount() {
+            const cart = CartUtils.loadCart();
+            const count = cart.length;
+            document.getElementById('cartCount').textContent = count;
+            document.getElementById('mobileCartCount').textContent = count;
+        }
+
+        // Update cart count on load
+        document.addEventListener('DOMContentLoaded', updateCartCount);
+    </script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            once: true,
+            easing: 'ease-out-cubic'
+        });
+    </script>
+</body>
+</html>

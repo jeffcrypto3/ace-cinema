@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="website-style.css">
+    <link rel="stylesheet" href="event-cinema.css">
+    <link rel="stylesheet" href="food.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/5e71aa76e3.js" crossorigin="anonymous"></script>
+    <link rel="icon" href="favicon-256.ico" type="image/x-icon">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <title>Event Cinema - Special Screenings | Ace Cinema</title>
+</head>
+<body>
+    <nav class="navbar">
+        <h1 class="owner-sty">
+            <a href="index.html"><img src="AceCinema2-removebg-preview.png" style="width: 130px" alt="Ace Cinema"></a>
+        </h1>
+        <ul class="features">
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="index.html#filmDisplay">BOOK TICKETS</a></li>
+            <li><a href="food.html">FOOD & DRINKS</a></li>
+        </ul>
+        <div class="cart-section">
+            <ul class="cart-sty" id="displayCart">
+                CART (<span id="cartCount">0</span>)
+            </ul>
+        </div>
+
+        <div class="mobile-navbar">
+            <div class="menu-area">
+                <button class="cart" id="displayMobileCart">
+                    <i class="fa-solid fa-cart-shopping fa-lg"></i>
+                    <span id="mobileCartCount">0</span>
+                </button>
+                <button id="cartBtn">
+                    <i class="fa-solid fa-bars fa-lg"></i>
+                </button>
+            </div>
+
+            <div class="menu-container" id="menuContainer">
+                <ul class="mobile-features">
+                    <button id="closeBtn">
+                        <i class="fa-solid fa-circle-xmark fa-2x" style="color: #f2f2f2"></i>
+                    </button>
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="index.html#filmDisplay">BOOK TICKETS</a></li>
+                    <li><a href="food.html">FOOD & DRINKS</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="event-container">
+        <!-- Hero Section -->
+        <div class="event-hero">
+            <div class="hero-overlay"></div>
+            <div class="hero-content" data-aos="fade-up" data-aos-duration="800">
+                <h1><i class="fa-solid fa-calendar-star"></i> EVENT CINEMA</h1>
+                <p>More than just movies - Experience live events on the big screen</p>
+            </div>
+        </div>
+
+        <!-- Category Tabs -->
+        <div class="event-tabs" data-aos="fade-up" data-aos-duration="600" data-aos-delay="100">
+            <button class="event-tab active" data-category="all">All Events</button>
+            <button class="event-tab" data-category="sports">Live Sports</button>
+            <button class="event-tab" data-category="concerts">Concerts</button>
+            <button class="event-tab" data-category="gaming">Gaming</button>
+            <button class="event-tab" data-category="private">Private Events</button>
+        </div>
+
+        <!-- Upcoming Events -->
+        <section class="events-section">
+            <h2 data-aos="fade-up" data-aos-duration="600">Upcoming Events</h2>
+            <div class="events-grid" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
+                <!-- Live Sports Events -->
+                <div class="event-card" data-category="sports">
+                    <div class="event-image">
+                        <img src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=500" alt="Champions League">
+                        <div class="event-badge live">LIVE</div>
+                        <div class="event-date">
+                            <span class="day">MAR</span>
+                            <span class="number">15</span>
+                        </div>
+                    </div>
+                    <div class="event-info">
+                        <h3>UEFA Champions League Final</h3>
+                        <p class="event-meta">
+                            <i class="fa-regular fa-clock"></i> 8:00 PM
+                            <i class="fa-solid fa-map-pin"></i> Main Hall
+                        </p>
+                        <p class="event-description">Watch the biggest club football match of the year on our giant screen!</p>
+                        <div class="event-price">₦5,000 <span>per person</span></div>
+                        <button class="event-btn" onclick="showModal('Coming Soon! Contact us at events@acecinema.ng or call +234 800 ACE 0000 to book tickets.', { type: 'info', title: 'Event Tickets' })">
+                            <i class="fa-solid fa-ticket"></i> Get Tickets
+                        </button>
+                    </div>
+                </div>
+
+                <div class="event-card" data-category="sports">
+                    <div class="event-image">
+                        <img src="https://images.unsplash.com/photo-1552674605-db6ffd4facb5?w=500" alt="Boxing">
+                        <div class="event-badge live">LIVE</div>
+                        <div class="event-date">
+                            <span class="day">MAR</span>
+                            <span class="number">22</span>
+                        </div>
+                    </div>
+                    <div class="event-info">
+                        <h3>World Championship Boxing</h3>
+                        <p class="event-meta">
+                            <i class="fa-regular fa-clock"></i> 10:00 PM
+                            <i class="fa-solid fa-map-pin"></i> Hall 2
+                        </p>
+                        <p class="event-description">Anthony Joshua vs Tyson Fury - The ultimate heavyweight showdown!</p>
+                        <div class="event-price">₦7,500 <span>per person</span></div>
+                        <button class="event-btn" onclick="showModal('Coming Soon! Contact us at events@acecinema.ng or call +234 800 ACE 0000 to book tickets.', { type: 'info', title: 'Event Tickets' })">
+                            <i class="fa-solid fa-ticket"></i> Get Tickets
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Concert Events -->
+                <div class="event-card" data-category="concerts">
+                    <div class="event-image">
+                        <img src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=500" alt="Concert">
+                        <div class="event-badge concert">CONCERT</div>
+                        <div class="event-date">
+                            <span class="day">APR</span>
+                            <span class="number">05</span>
+                        </div>
+                    </div>
+                    <div class="event-info">
+                        <h3>Burna Boy: Live in Concert</h3>
+                        <p class="event-meta">
+                            <i class="fa-regular fa-clock"></i> 7:00 PM
+                            <i class="fa-solid fa-map-pin"></i> Main Hall
+                        </p>
+                        <p class="event-description">Experience the African Giant's world tour concert film on the big screen!</p>
+                        <div class="event-price">₦8,000 <span>per person</span></div>
+                        <button class="event-btn" onclick="showModal('Coming Soon! Contact us at events@acecinema.ng or call +234 800 ACE 0000 to book tickets.', { type: 'info', title: 'Event Tickets' })">
+                            <i class="fa-solid fa-ticket"></i> Get Tickets
+                        </button>
+                    </div>
+                </div>
+
+                <div class="event-card" data-category="concerts">
+                    <div class="event-image">
+                        <img src="https://images.unsplash.com/photo-1501386761578-eac5c94b800a?w=500" alt="Coldplay">
+                        <div class="event-badge concert">CONCERT</div>
+                        <div class="event-date">
+                            <span class="day">APR</span>
+                            <span class="number">12</span>
+                        </div>
+                    </div>
+                    <div class="event-info">
+                        <h3>Coldplay: Music of the Spheres</h3>
+                        <p class="event-meta">
+                            <i class="fa-regular fa-clock"></i> 6:00 PM
+                            <i class="fa-solid fa-map-pin"></i> Hall 1
+                        </p>
+                        <p class="event-description">Witness Coldplay's spectacular world tour in immersive cinema quality!</p>
+                        <div class="event-price">₦6,500 <span>per person</span></div>
+                        <button class="event-btn" onclick="showModal('Coming Soon! Contact us at events@acecinema.ng or call +234 800 ACE 0000 to book tickets.', { type: 'info', title: 'Event Tickets' })">
+                            <i class="fa-solid fa-ticket"></i> Get Tickets
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Gaming Events -->
+                <div class="event-card" data-category="gaming">
+                    <div class="event-image">
+                        <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?w=500" alt="Gaming">
+                        <div class="event-badge gaming">GAMING</div>
+                        <div class="event-date">
+                            <span class="day">MAR</span>
+                            <span class="number">30</span>
+                        </div>
+                    </div>
+                    <div class="event-info">
+                        <h3>FIFA Tournament</h3>
+                        <p class="event-meta">
+                            <i class="fa-regular fa-clock"></i> 2:00 PM
+                            <i class="fa-solid fa-map-pin"></i> Gaming Zone
+                        </p>
+                        <p class="event-description">Compete in our monthly FIFA tournament. Prizes worth ₦500,000!</p>
+                        <div class="event-price">₦3,000 <span>entry fee</span></div>
+                        <button class="event-btn" onclick="showModal('Coming Soon! Contact us at events@acecinema.ng or call +234 800 ACE 0000 to register for the tournament.', { type: 'info', title: 'Tournament Registration' })">
+                            <i class="fa-solid fa-gamepad"></i> Register Now
+                        </button>
+                    </div>
+                </div>
+
+                <div class="event-card" data-category="gaming">
+                    <div class="event-image">
+                        <img src="https://images.unsplash.com/photo-1511512578047-dfb367046420?w=500" alt="Esports">
+                        <div class="event-badge gaming">ESPORTS</div>
+                        <div class="event-date">
+                            <span class="day">APR</span>
+                            <span class="number">20</span>
+                        </div>
+                    </div>
+                    <div class="event-info">
+                        <h3>Call of Duty Championship</h3>
+                        <p class="event-meta">
+                            <i class="fa-regular fa-clock"></i> 4:00 PM
+                            <i class="fa-solid fa-map-pin"></i> Hall 3
+                        </p>
+                        <p class="event-description">Watch the best COD players battle it out live!</p>
+                        <div class="event-price">₦2,000 <span>spectator</span></div>
+                        <button class="event-btn" onclick="showModal('Coming Soon! Contact us at events@acecinema.ng or call +234 800 ACE 0000 to book tickets.', { type: 'info', title: 'Event Tickets' })">
+                            <i class="fa-solid fa-ticket"></i> Get Tickets
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Private Events Section -->
+        <section class="private-section" data-category="private">
+            <h2 data-aos="fade-up" data-aos-duration="600">Host Your Event With Us</h2>
+            <p class="section-subtitle" data-aos="fade-up" data-aos-duration="600" data-aos-delay="50">Make your special occasions unforgettable</p>
+            
+            <div class="private-grid" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
+                <div class="private-card">
+                    <div class="private-icon">
+                        <i class="fa-solid fa-cake-candles"></i>
+                    </div>
+                    <h3>Birthday Parties</h3>
+                    <p>Celebrate your birthday with friends and family watching your favorite movie!</p>
+                    <ul>
+                        <li><i class="fa-solid fa-check"></i> Private screening room</li>
+                        <li><i class="fa-solid fa-check"></i> Customized decorations</li>
+                        <li><i class="fa-solid fa-check"></i> Birthday cake included</li>
+                        <li><i class="fa-solid fa-check"></i> Food & drinks package</li>
+                    </ul>
+                    <div class="private-price">From ₦80,000</div>
+                </div>
+
+                <div class="private-card">
+                    <div class="private-icon">
+                        <i class="fa-solid fa-building"></i>
+                    </div>
+                    <h3>Corporate Events</h3>
+                    <p>Team building, product launches, or company celebrations</p>
+                    <ul>
+                        <li><i class="fa-solid fa-check"></i> Full cinema rental</li>
+                        <li><i class="fa-solid fa-check"></i> Presentation equipment</li>
+                        <li><i class="fa-solid fa-check"></i> Catering services</li>
+                        <li><i class="fa-solid fa-check"></i> Custom branding options</li>
+                    </ul>
+                    <div class="private-price">From ₦200,000</div>
+                </div>
+
+                <div class="private-card">
+                    <div class="private-icon">
+                        <i class="fa-solid fa-graduation-cap"></i>
+                    </div>
+                    <h3>School Trips</h3>
+                    <p>Educational screenings for schools and student groups</p>
+                    <ul>
+                        <li><i class="fa-solid fa-check"></i> Group discounts</li>
+                        <li><i class="fa-solid fa-check"></i> Educational content</li>
+                        <li><i class="fa-solid fa-check"></i> Snack packages</li>
+                        <li><i class="fa-solid fa-check"></i> Flexible scheduling</li>
+                    </ul>
+                    <div class="private-price">₦2,500 per student</div>
+                </div>
+            </div>
+
+            <div class="cta-section" data-aos="fade-up" data-aos-duration="800">
+                <h3>Ready to plan your event?</h3>
+                <p>Contact our events team for custom packages and availability</p>
+                <button class="cta-btn" onclick="showModal('Contact our events team:\n\nEmail: events@acecinema.ng\nPhone: +234 800 ACE 0000\n\nWe\'ll help you plan the perfect event!', { type: 'info', title: 'Contact Events Team' })">
+                    <i class="fa-solid fa-envelope"></i> Contact Events Team
+                </button>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2026 Ace Cinema. All rights reserved.</p>
+    </footer>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h2><i class="fa-solid fa-shopping-cart"></i> Your Order</h2>
+            <button class="close-cart" id="closeCart">
+                <i class="fa-solid fa-times"></i>
+            </button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <div class="empty-cart">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <p>Your cart is empty</p>
+            </div>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cartTotal">₦0</span>
+            </div>
+            <button class="checkout-btn" id="checkoutBtn" disabled>
+                <i class="fa-solid fa-credit-card"></i> Checkout
+            </button>
+        </div>
+    </div>
+
+    <script src="modal.js"></script>
+    <script src="cart-utils.js"></script>
+    <script>
+        // Mobile menu toggle
+        document.getElementById('cartBtn').addEventListener('click', () => {
+            document.getElementById('menuContainer').classList.add('active');
+        });
+        document.getElementById('closeBtn').addEventListener('click', () => {
+            document.getElementById('menuContainer').classList.remove('active');
+        });
+
+        // Cart functionality
+        const cartSidebar = document.getElementById('cartSidebar');
+        const closeCartBtn = document.getElementById('closeCart');
+        const displayCart = document.getElementById('displayCart');
+        const displayMobileCart = document.getElementById('displayMobileCart');
+        const checkoutBtn = document.getElementById('checkoutBtn');
+
+        function openCart() {
+            cartSidebar.classList.add('active');
+            updateCartDisplay();
+        }
+
+        function closeCart() {
+            cartSidebar.classList.remove('active');
+        }
+
+        displayCart.addEventListener('click', openCart);
+        displayMobileCart.addEventListener('click', openCart);
+        closeCartBtn.addEventListener('click', closeCart);
+
+        checkoutBtn.addEventListener('click', () => {
+            window.location.href = 'checkout.html';
+        });
+
+        function updateCartDisplay() {
+            const cart = CartUtils.loadCart();
+            const cartItems = document.getElementById('cartItems');
+            const cartTotal = document.getElementById('cartTotal');
+            const checkoutBtn = document.getElementById('checkoutBtn');
+
+            if (cart.length === 0) {
+                cartItems.innerHTML = `
+                    <div class="empty-cart">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        <p>Your cart is empty</p>
+                    </div>
+                `;
+                cartTotal.textContent = '₦0';
+                checkoutBtn.disabled = true;
+                return;
+            }
+
+            let html = '';
+            let total = 0;
+
+            cart.forEach((item, index) => {
+                if (item.type === 'ticket') {
+                    const totalTickets = (item.tickets?.adult || 0) + (item.tickets?.child || 0) + (item.tickets?.senior || 0) || 1;
+                    total += item.price;
+                    html += `
+                        <div class="cart-item">
+                            <div class="cart-item-header">
+                                <span class="cart-item-name">${item.movie}</span>
+                                <button class="remove-item" onclick="removeFromCart(${index})">
+                                    <i class="fa-solid fa-trash"></i>
+                                </button>
+                            </div>
+                            <div class="cart-item-details">
+                                ${item.date}<br>
+                                ${item.time}<br>
+                                ${totalTickets} ticket(s)<br>
+                                Seats: ${item.seats}
+                            </div>
+                            <div class="cart-item-footer">
+                                <span class="cart-item-price">₦${item.price.toLocaleString()}</span>
+                            </div>
+                        </div>
+                    `;
+                } else {
+                    const itemTotal = item.price * (item.quantity || 1);
+                    total += itemTotal;
+                    html += `
+                        <div class="cart-item">
+                            <div class="cart-item-header">
+                                <span class="cart-item-name">${item.name}</span>
+                                <button class="remove-item" onclick="removeFromCart(${index})">
+                                    <i class="fa-solid fa-trash"></i>
+                                </button>
+                            </div>
+                            <div class="cart-item-details">
+                                ${item.size} × ${item.quantity}
+                            </div>
+                            <div class="cart-item-footer">
+                                <span class="cart-item-price">₦${itemTotal.toLocaleString()}</span>
+                            </div>
+                        </div>
+                    `;
+                }
+            });
+
+            cartItems.innerHTML = html;
+            cartTotal.textContent = '₦' + total.toLocaleString();
+            checkoutBtn.disabled = false;
+        }
+
+        function removeFromCart(index) {
+            const cart = CartUtils.loadCart();
+            cart.splice(index, 1);
+            CartUtils.saveCart(cart);
+            updateCartDisplay();
+            updateCartCount();
+        }
+
+        function updateCartCount() {
+            const cart = CartUtils.loadCart();
+            const count = cart.length;
+            document.getElementById('cartCount').textContent = count;
+            document.getElementById('mobileCartCount').textContent = count;
+        }
+
+        // Update cart count on load
+        document.addEventListener('DOMContentLoaded', updateCartCount);
+
+        // Tab filtering
+        const tabs = document.querySelectorAll('.event-tab');
+        const eventCards = document.querySelectorAll('.event-card');
+        const privateSection = document.querySelector('.private-section');
+
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                // Update active tab
+                tabs.forEach(t => t.classList.remove('active'));
+                tab.classList.add('active');
+
+                const category = tab.dataset.category;
+
+                // Filter event cards
+                eventCards.forEach(card => {
+                    if (category === 'all' || card.dataset.category === category) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+
+                // Show/hide private section
+                if (category === 'all' || category === 'private') {
+                    privateSection.style.display = 'block';
+                } else {
+                    privateSection.style.display = 'none';
+                }
+            });
+        });
+    </script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            once: true,
+            easing: 'ease-out-cubic'
+        });
+    </script>
+</body>
+</html>

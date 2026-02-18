@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="website-style.css">
+    <link rel="stylesheet" href="food.css">
+    <link rel="stylesheet" href="checkout.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/5e71aa76e3.js" crossorigin="anonymous"></script>
+    <link rel="icon" href="favicon-256.ico" type="image/x-icon">
+    <title>Checkout - Ace Cinema</title>
+</head>
+<body>
+    <nav class="navbar">
+        <h1 class="owner-sty">
+            <a href="index.html"><img src="AceCinema2-removebg-preview.png" style="width: 130px" alt="Ace Cinema"></a>
+        </h1>
+        <ul class="features">
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="index.html#filmDisplay">BOOK TICKETS</a></li>
+            <li><a href="food.html">FOOD & DRINKS</a></li>
+        </ul>
+        <div class="cart-section">
+            <ul class="cart-sty" id="displayCart">
+                CART (<span id="cartCount">0</span>)
+            </ul>
+        </div>
+
+        <div class="mobile-navbar">
+            <div class="menu-area">
+                <button class="cart" id="displayMobileCart">
+                    <i class="fa-solid fa-cart-shopping fa-lg"></i>
+                    <span id="mobileCartCount">0</span>
+                </button>
+                <button id="cartBtn">
+                    <i class="fa-solid fa-bars fa-lg"></i>
+                </button>
+            </div>
+
+            <div class="menu-container" id="menuContainer">
+                <ul class="mobile-features">
+                    <button id="closeBtn">
+                        <i class="fa-solid fa-circle-xmark fa-2x" style="color: #f2f2f2"></i>
+                    </button>
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="index.html#filmDisplay">BOOK TICKETS</a></li>
+                    <li><a href="food.html">FOOD & DRINKS</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="checkout-container">
+        <div class="checkout-header">
+            <h1><i class="fa-solid fa-credit-card"></i> Checkout</h1>
+            <p>Complete your payment to confirm your booking</p>
+        </div>
+
+        <div class="checkout-content">
+            <!-- Payment Form -->
+            <div class="payment-form">
+                <h2><i class="fa-solid fa-lock"></i> Payment Details</h2>
+                <form id="checkoutForm">
+                    <!-- Contact Information -->
+                    <div class="form-section">
+                        <h3>Contact Information</h3>
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" required placeholder="your.email@example.com">
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="firstName">First Name *</label>
+                                <input type="text" id="firstName" name="firstName" required placeholder="John">
+                            </div>
+                            <div class="form-group">
+                                <label for="lastName">Last Name *</label>
+                                <input type="text" id="lastName" name="lastName" required placeholder="Doe">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number *</label>
+                            <input type="tel" id="phone" name="phone" required placeholder="+234 XXX XXX XXXX">
+                        </div>
+                    </div>
+
+                    <div class="payment-info">
+                        <i class="fa-brands fa-cc-visa"></i>
+                        <i class="fa-brands fa-cc-mastercard"></i>
+                        <i class="fa-solid fa-building-columns"></i>
+                        <span>Secured by Paystack</span>
+                    </div>
+
+                    <button type="submit" class="submit-btn" id="submitBtn">
+                        <i class="fa-solid fa-lock"></i> Proceed to Payment
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h2><i class="fa-solid fa-shopping-cart"></i> Your Order</h2>
+            <button class="close-cart" id="closeCart">
+                <i class="fa-solid fa-times"></i>
+            </button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <div class="empty-cart">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <p>Your cart is empty</p>
+            </div>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cartTotal">₦0</span>
+            </div>
+            <button class="checkout-btn" id="checkoutBtn" disabled>
+                <i class="fa-solid fa-credit-card"></i> Checkout
+            </button>
+        </div>
+    </div>
+
+    <!-- Success Modal -->
+    <div class="success-modal" id="successModal">
+        <div class="success-content">
+            <div class="success-icon">
+                <i class="fa-solid fa-circle-check"></i>
+            </div>
+            <h2>Payment Successful!</h2>
+            <p>Your booking has been confirmed</p>
+            <div class="booking-reference">
+                <p>Booking Reference</p>
+                <h3 id="bookingReference">ACE-XXXXXX</h3>
+            </div>
+            <div class="success-details">
+                <p>A confirmation email has been sent to <span id="confirmEmail"></span></p>
+                <p>Please show this reference at the cinema</p>
+            </div>
+            <button class="back-btn" onclick="window.location.href='index.html'">
+                Back to Home
+            </button>
+        </div>
+    </div>
+
+    <!-- Firebase CDN Scripts -->
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
+    
+    <!-- Firebase Configuration -->
+    <script src="firebase-config.js"></script>
+    <script src="firebase-bookings.js"></script>
+    
+    <!-- Paystack & App Scripts -->
+    <script src="https://js.paystack.co/v1/inline.js"></script>
+    <script src="modal.js"></script>
+    <script src="cart-utils.js"></script>
+    <script src="checkout.js"></script>
+</body>
+</html>

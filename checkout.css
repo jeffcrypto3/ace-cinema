@@ -1,0 +1,525 @@
+/* Checkout Page Styles */
+.checkout-container {
+    max-width: 1400px;
+    margin: 120px auto 40px;
+    padding: 0 20px;
+}
+
+.checkout-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.checkout-header h1 {
+    font-size: 2.5rem;
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.checkout-header h1 i {
+    color: #ffcc00;
+    margin-right: 10px;
+}
+
+.checkout-header p {
+    font-size: 1.1rem;
+    color: #999;
+}
+
+.checkout-content {
+    max-width: 800px;
+    margin: 0 auto 40px;
+}
+
+/* Order Summary */
+.order-summary {
+    background: #2a2a2a;
+    padding: 30px;
+    border-radius: 12px;
+    height: fit-content;
+    position: sticky;
+    top: 100px;
+}
+
+.order-summary h2 {
+    font-size: 1.5rem;
+    color: #fff;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.order-summary h2 i {
+    color: #ffcc00;
+}
+
+.order-item {
+    background: #1a1a1a;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.order-item-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    margin-bottom: 10px;
+}
+
+.order-item-name {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #fff;
+}
+
+.order-item-price {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #ffcc00;
+}
+
+.order-item-details {
+    font-size: 0.9rem;
+    color: #999;
+    line-height: 1.6;
+}
+
+.order-item-details span {
+    display: block;
+}
+
+.order-total {
+    margin-top: 25px;
+    padding-top: 25px;
+    border-top: 2px solid #3a3a3a;
+}
+
+.total-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 12px;
+    font-size: 1rem;
+    color: #ccc;
+}
+
+.grand-total {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #fff;
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 2px solid #3a3a3a;
+}
+
+.grand-total span:last-child {
+    color: #ffcc00;
+}
+
+/* Payment Form */
+.payment-form {
+    background: #2a2a2a;
+    padding: 30px;
+    border-radius: 12px;
+}
+
+.payment-form h2 {
+    font-size: 1.5rem;
+    color: #fff;
+    margin-bottom: 25px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.payment-form h2 i {
+    color: #ffcc00;
+}
+
+.form-section {
+    margin-bottom: 30px;
+    padding-bottom: 25px;
+    border-bottom: 1px solid #3a3a3a;
+}
+
+.form-section:last-of-type {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.form-section h3 {
+    font-size: 1.2rem;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    color: #ccc;
+    margin-bottom: 8px;
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px 15px;
+    background: #1a1a1a;
+    border: 2px solid #3a3a3a;
+    border-radius: 8px;
+    color: #fff;
+    font-size: 1rem;
+    transition: all 0.3s;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #ffcc00;
+    background: #252525;
+}
+
+.form-group input.error {
+    border-color: #ff4444;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+/* Payment Methods */
+.payment-methods {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.payment-method-option {
+    display: block;
+    cursor: pointer;
+}
+
+.payment-method-option input[type="radio"] {
+    display: none;
+}
+
+.payment-method-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 15px;
+    background: #1a1a1a;
+    border: 2px solid #3a3a3a;
+    border-radius: 8px;
+    color: #ccc;
+    font-size: 1rem;
+    transition: all 0.3s;
+}
+
+.payment-method-card i {
+    font-size: 1.2rem;
+}
+
+.payment-method-option input[type="radio"]:checked + .payment-method-card {
+    background: #2a2a2a;
+    border-color: #ffcc00;
+    color: #fff;
+}
+
+.payment-method-card:hover {
+    border-color: #ffcc00;
+}
+
+/* Transfer Info */
+.transfer-info {
+    background: #1a1a1a;
+    padding: 20px;
+    border-radius: 8px;
+    border-left: 4px solid #ffcc00;
+}
+
+.transfer-info h4 {
+    color: #fff;
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+}
+
+.transfer-info p {
+    color: #ccc;
+    margin-bottom: 8px;
+    font-size: 0.95rem;
+}
+
+.transfer-note {
+    color: #ffcc00 !important;
+    font-style: italic;
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid #3a3a3a;
+}
+
+/* Payment Info */
+.payment-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    padding: 20px;
+    background: #1a1a1a;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.payment-info i {
+    font-size: 2rem;
+    color: #ccc;
+}
+
+.payment-info span {
+    color: #ffcc00;
+    font-weight: 600;
+    margin-left: 10px;
+}
+
+/* Submit Button */
+.submit-btn {
+    width: 100%;
+    padding: 16px;
+    background: #ffcc00;
+    color: #000;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s;
+    margin-top: 10px;
+}
+
+.submit-btn:hover {
+    background: #ffdb4d;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 204, 0, 0.3);
+}
+
+.submit-btn:active {
+    transform: translateY(0);
+}
+
+.submit-btn:disabled {
+    background: #555;
+    color: #888;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.submit-btn i {
+    margin-right: 8px;
+}
+
+/* Success Modal */
+.success-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.95);
+    z-index: 10000;
+    align-items: center;
+    justify-content: center;
+}
+
+.success-modal.show {
+    display: flex;
+}
+
+.success-content {
+    background: #2a2a2a;
+    padding: 50px 40px;
+    border-radius: 16px;
+    text-align: center;
+    max-width: 500px;
+    width: 90%;
+    animation: slideUp 0.5s ease;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.success-icon {
+    margin-bottom: 25px;
+}
+
+.success-icon i {
+    font-size: 5rem;
+    color: #4caf50;
+    animation: scaleUp 0.5s ease 0.2s both;
+}
+
+@keyframes scaleUp {
+    from {
+        transform: scale(0);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
+.success-content h2 {
+    font-size: 2rem;
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.success-content > p {
+    font-size: 1.1rem;
+    color: #999;
+    margin-bottom: 30px;
+}
+
+.booking-reference {
+    background: #1a1a1a;
+    padding: 25px;
+    border-radius: 12px;
+    margin-bottom: 25px;
+    border: 2px dashed #ffcc00;
+}
+
+.booking-reference p {
+    color: #999;
+    font-size: 0.9rem;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.booking-reference h3 {
+    color: #ffcc00;
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    font-family: 'Courier New', monospace;
+}
+
+.success-details {
+    margin-bottom: 30px;
+}
+
+.success-details p {
+    color: #ccc;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 8px;
+}
+
+.success-details span {
+    color: #fff;
+    font-weight: 600;
+}
+
+.back-btn {
+    padding: 14px 40px;
+    background: #ffcc00;
+    color: #000;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.back-btn:hover {
+    background: #ffdb4d;
+    transform: translateY(-2px);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .checkout-container {
+        padding: 0 15px;
+    }
+}
+
+@media (max-width: 768px) {
+    .checkout-container {
+        margin-top: 100px;
+    }
+
+    .checkout-header h1 {
+        font-size: 2rem;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+
+    .payment-methods {
+        grid-template-columns: 1fr;
+    }
+
+    .payment-form {
+        padding: 20px;
+    }
+
+    .success-content {
+        padding: 40px 30px;
+    }
+
+    .booking-reference h3 {
+        font-size: 1.5rem;
+        letter-spacing: 2px;
+    }
+}
+
+@media (max-width: 480px) {
+    .checkout-header h1 {
+        font-size: 1.6rem;
+    }
+
+    .checkout-header p {
+        font-size: 0.95rem;
+    }
+
+    .payment-form {
+        padding: 15px;
+    }
+
+    .success-content {
+        padding: 30px 20px;
+    }
+
+    .success-icon i {
+        font-size: 4rem;
+    }
+
+    .success-content h2 {
+        font-size: 1.6rem;
+    }
+
+    .booking-reference {
+        padding: 20px 15px;
+    }
+
+    .booking-reference h3 {
+        font-size: 1.3rem;
+        letter-spacing: 1px;
+    }
+}

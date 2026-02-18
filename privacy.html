@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="website-style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/5e71aa76e3.js" crossorigin="anonymous"></script>
+    <link rel="icon" href="favicon-256.ico" type="image/x-icon">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <title>Privacy Policy | Ace Cinema</title>
+    <style>
+        .policy-container {
+            padding: 120px 5% 60px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .policy-hero {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .policy-hero h1 {
+            font-size: 3rem;
+            background: linear-gradient(135deg, #ffd700, #ffed4a);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 15px;
+        }
+
+        .policy-hero p {
+            color: #888;
+            font-size: 0.95rem;
+        }
+
+        .policy-section {
+            background: linear-gradient(145deg, #1a1a1a, #0d0d0d);
+            border-radius: 20px;
+            padding: 35px;
+            margin-bottom: 25px;
+            border: 1px solid #222;
+        }
+
+        .policy-section h2 {
+            color: #ffd700;
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .policy-section p {
+            color: #bbb;
+            line-height: 1.8;
+            font-size: 0.95rem;
+        }
+
+        .policy-section ul {
+            color: #bbb;
+            padding-left: 20px;
+            margin-top: 10px;
+        }
+
+        .policy-section ul li {
+            margin-bottom: 8px;
+            line-height: 1.6;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: #ffd700;
+            text-decoration: none;
+            margin-bottom: 30px;
+            transition: opacity 0.3s;
+        }
+
+        .back-link:hover {
+            opacity: 0.7;
+        }
+
+        @media (max-width: 768px) {
+            .policy-container {
+                padding: 100px 4% 40px;
+            }
+            .policy-hero h1 {
+                font-size: 2rem;
+            }
+            .policy-section {
+                padding: 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <h1 class="owner-sty">
+            <a href="index.html"><img src="AceCinema2-removebg-preview.png" style="width: 130px" alt="Ace Cinema"></a>
+        </h1>
+        <ul class="features">
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="index.html#filmDisplay">BOOK TICKETS</a></li>
+            <li><a href="food.html">FOOD & DRINKS</a></li>
+        </ul>
+        <div style="flex: 1;"></div>
+
+        <div class="mobile-navbar">
+            <div class="menu-area">
+                <button id="cartBtn">
+                    <i class="fa-solid fa-bars fa-lg"></i>
+                </button>
+            </div>
+
+            <div class="menu-container" id="menuContainer">
+                <ul class="mobile-features">
+                    <button id="closeBtn">
+                        <i class="fa-solid fa-circle-xmark fa-2x" style="color: #f2f2f2"></i>
+                    </button>
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="index.html#filmDisplay">BOOK TICKETS</a></li>
+                    <li><a href="food.html">FOOD & DRINKS</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="policy-container">
+        <a href="index.html" class="back-link" data-aos="fade-right" data-aos-duration="400">
+            <i class="fa-solid fa-arrow-left"></i> Back to Home
+        </a>
+
+        <div class="policy-hero" data-aos="fade-up" data-aos-duration="600">
+            <h1><i class="fa-solid fa-shield-halved"></i> Privacy Policy</h1>
+            <p>Last updated: February 2026</p>
+        </div>
+
+        <div class="policy-section" data-aos="fade-up" data-aos-duration="600" data-aos-delay="100">
+            <h2><i class="fa-solid fa-database"></i> Information We Collect</h2>
+            <p>When you use Ace Cinema's services, we may collect:</p>
+            <ul>
+                <li>Name and contact information when booking tickets</li>
+                <li>Payment details (processed securely by third-party providers)</li>
+                <li>Booking history and preferences</li>
+            </ul>
+        </div>
+
+        <div class="policy-section" data-aos="fade-up" data-aos-duration="600" data-aos-delay="200">
+            <h2><i class="fa-solid fa-gear"></i> How We Use Your Data</h2>
+            <p>Your information helps us provide better service:</p>
+            <ul>
+                <li>Process ticket bookings and payments</li>
+                <li>Send booking confirmations and updates</li>
+                <li>Improve our services and personalize your experience</li>
+            </ul>
+        </div>
+
+        <div class="policy-section" data-aos="fade-up" data-aos-duration="600" data-aos-delay="300">
+            <h2><i class="fa-solid fa-lock"></i> Data Security</h2>
+            <p>We take your privacy seriously. All personal data is encrypted and stored securely. We never sell your information to third parties.</p>
+        </div>
+
+        <div class="policy-section" data-aos="fade-up" data-aos-duration="600" data-aos-delay="400">
+            <h2><i class="fa-solid fa-envelope"></i> Contact Us</h2>
+            <p>Questions about your privacy? Reach out at <strong style="color: #ffd700;">privacy@acecinema.com</strong></p>
+        </div>
+    </div>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('cartBtn').addEventListener('click', () => {
+            document.getElementById('menuContainer').classList.add('active');
+        });
+        document.getElementById('closeBtn').addEventListener('click', () => {
+            document.getElementById('menuContainer').classList.remove('active');
+        });
+    </script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            once: true,
+            easing: 'ease-out-cubic'
+        });
+    </script>
+</body>
+</html>
