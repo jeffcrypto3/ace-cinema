@@ -344,6 +344,11 @@
         closeCartBtn.addEventListener('click', closeCart);
 
         checkoutBtn.addEventListener('click', () => {
+            const tickets = CartUtils.getItemsByType('ticket');
+            if (tickets.length === 0) {
+                showModal('You need to book a ticket before checkout. Please select your seats and add to cart.', { type: 'warning', title: 'Ticket Required' });
+                return;
+            }
             window.location.href = 'checkout.html';
         });
 

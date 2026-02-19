@@ -177,8 +177,8 @@ function selectDate(element) {
   element.classList.add("selected");
   bookingState.date = element.dataset.date;
 
-  // Enable showtimes
-  document.querySelectorAll(".showtime-option").forEach((el) => el.classList.remove("disabled"));
+  // Enable showtimes (then filter based on current time if today)
+  updateAvailableShowtimes();
 
   // Clear previously selected seats when date changes
   bookingState.seats = [];
@@ -187,12 +187,61 @@ function selectDate(element) {
     seat.classList.add('available');
   });
 
+  // Clear selected time if it's now disabled
+  const selectedTime = document.querySelector('.showtime-option.selected');
+  if (selectedTime && selectedTime.classList.contains('disabled')) {
+    selectedTime.classList.remove('selected');
+    bookingState.time = null;
+  }
+
   // If a time is already selected, reload seats for the new date
   if (bookingState.time) {
     loadBookedSeatsFromFirebase();
   }
 
   updateSummary();
+}
+
+// Update available showtimes based on selected date
+function updateAvailableShowtimes() {
+  const selectedDate = bookingState.date; // Format: YYYY-MM-DD
+  const now = new Date();
+  const today = now.toISOString().split('T')[0]; // Format: YYYY-MM-DD
+  
+  document.querySelectorAll(".showtime-option").forEach((el) => {
+    const timeStr = el.dataset.time;
+    
+    // If selected date is today, check if time has passed
+    if (selectedDate === today) {
+      const showDateTime = parseShowtime(timeStr);
+      if (showDateTime <= now) {
+        el.classList.add("disabled");
+        el.classList.remove("selected");
+      } else {
+        el.classList.remove("disabled");
+      }
+    } else {
+      // Future date - all times available
+      el.classList.remove("disabled");
+    }
+  });
+}
+
+// Parse showtime string to Date object for comparison
+function parseShowtime(timeStr) {
+  const now = new Date();
+  const [time, period] = timeStr.split(' ');
+  let [hours, minutes] = time.split(':').map(Number);
+  
+  if (period === 'PM' && hours !== 12) {
+    hours += 12;
+  } else if (period === 'AM' && hours === 12) {
+    hours = 0;
+  }
+  
+  const showTime = new Date(now);
+  showTime.setHours(hours, minutes, 0, 0);
+  return showTime;
 }
 
 // Generate showtimes
@@ -696,6 +745,13 @@ function processCheckout() {
   const cart = CartUtils.loadCart();
   if (cart.length === 0) {
     showModal("Your cart is empty! Please add items before checking out.", { type: 'warning', title: 'Empty Cart' });
+    return;
+  }
+
+  // Check if cart has at least one ticket
+  const tickets = CartUtils.getItemsByType('ticket');
+  if (tickets.length === 0) {
+    showModal("You need to book a ticket before checkout. Please select your seats and add to cart.", { type: 'warning', title: 'Ticket Required' });
     return;
   }
   

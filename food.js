@@ -255,6 +255,13 @@ function processCheckout() {
     showModal("Your cart is empty! Please add items before checking out.", { type: 'warning', title: 'Empty Cart' });
     return;
   }
+
+  // Check if cart has at least one ticket
+  const tickets = CartUtils.getItemsByType('ticket');
+  if (tickets.length === 0) {
+    showModal("You need to book a ticket before checkout. Food & drinks can only be purchased alongside a movie ticket.", { type: 'warning', title: 'Ticket Required' });
+    return;
+  }
   
   // Redirect to checkout page
   window.location.href = "checkout.html";

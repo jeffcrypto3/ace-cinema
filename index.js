@@ -508,6 +508,13 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
 
+    // Check if cart has at least one ticket
+    const tickets = CartUtils.getItemsByType('ticket');
+    if (tickets.length === 0) {
+      showModal("You need to book a ticket before checkout. Food & drinks can only be purchased alongside a movie ticket.", { type: 'warning', title: 'Ticket Required' });
+      return;
+    }
+
     // Redirect to checkout page
     window.location.href = "checkout.html";
   };

@@ -419,11 +419,35 @@ body {
 
 .modal-content button {
     position: absolute;
-    top: 0;
-    float: left;
+    top: -15px;
+    right: -15px;
     border: none;
-    background: none;
+    background: #111;
     cursor: pointer;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    z-index: 10;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+.modal-content button:hover {
+    background: #ffcc00;
+    transform: scale(1.1);
+}
+
+.modal-content button:hover i {
+    color: #111 !important;
+}
+
+.modal-content button i {
+    font-size: 1.5rem;
+    color: #fff;
+    transition: color 0.3s ease;
 }
 
 .tri-cont {
