@@ -516,4 +516,19 @@ document.addEventListener("DOMContentLoaded", () => {
   updateCartDisplay();
   updateCartCount();
   setupCartSidebar();
+
+  // Coming Soon movie click handlers - using event delegation
+  const upcomingFilmContainer = document.getElementById('upcoming-film');
+  if (upcomingFilmContainer) {
+    upcomingFilmContainer.addEventListener('click', (e) => {
+      const card = e.target.closest('#upcoming-film > div');
+      if (card) {
+        const movieTitle = card.querySelector('h5')?.textContent || 'This movie';
+        showModal(`${movieTitle} is coming soon! Stay tuned for the release date.`, {
+          type: 'info',
+          title: 'Coming Soon'
+        });
+      }
+    });
+  }
 });

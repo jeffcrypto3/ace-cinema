@@ -190,15 +190,15 @@ body {
 .mobile-features {
     background: linear-gradient(145deg, rgba(20, 20, 25, 0.98), rgba(10, 10, 12, 0.98));
     backdrop-filter: blur(10px);
-    padding: 30px 25px;
-    width: 280px;
-    border-radius: 20px;
+    padding: 35px 8px 15px 15px;
+    width: 230px;
+    border-radius: 16px;
     position: absolute;
-    top: 15px;
+    top: 5px;
     right: 0px;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 4px;
     animation: slideLeft 0.3s ease-out forwards;
     border: 1px solid rgba(255, 204, 0, 0.2);
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
@@ -211,13 +211,13 @@ body {
 
 .mobile-features li a {
     display: block;
-    padding: 15px 20px;
+    padding: 10px 12px;
     color: #fff;
     text-decoration: none;
-    font-size: 1rem;
+    font-size: 0.95rem;
     font-weight: 500;
     letter-spacing: 0.5px;
-    border-radius: 12px;
+    border-radius: 10px;
     transition: all 0.3s ease;
     background: transparent;
 }
@@ -230,8 +230,8 @@ body {
 
 .mobile-features > button {
     position: absolute;
-    top: 15px;
-    right: 15px;
+    top: 8px;
+    right: 8px;
     border: none;
     background: none;
     cursor: pointer;
@@ -359,7 +359,7 @@ body {
 
 .btn-container {
     position: absolute;
-    top: 50%;
+    top: 35%;
     transform: translateY(-50%);
     width: 100%;
     display: flex;
@@ -370,14 +370,14 @@ body {
 }
 
 .btn-container button {
-    width: 60px;
-    height: 60px;
-    background-color: rgba(0, 0, 0, 0.3);
+    width: 70px;
+    height: 70px;
+    background-color: rgba(0, 0, 0, 0.4);
     border: none;
     border-radius: 50%;
     cursor: pointer;
     color: white;
-    font-size: 24px;
+    font-size: 28px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1220,6 +1220,7 @@ footer h1 a img {
     .navbar {
         justify-content: space-between;
         height: 8vh;
+        padding: 0 15px;
     }
 
     .showing-now {
@@ -1352,6 +1353,10 @@ footer h1 a img {
 
 
 @media (max-width: 768px) {
+    .navbar {
+        padding: 0 15px;
+    }
+
     .showing-now {
         width: 99%;
         height: 5vh;
@@ -1424,12 +1429,13 @@ footer h1 a img {
 
     .btn-container {
         padding: 0 1rem;
+        top: 30%;
     }
 
     .btn-container button {
-        width: 50px;
-        height: 50px;
-        font-size: 20px;
+        width: 55px;
+        height: 55px;
+        font-size: 22px;
     }
 
     #watchStyling button {
@@ -1544,14 +1550,19 @@ footer h1 a img {
 
 @media (max-width: 600px) {
 
+    .navbar {
+        padding: 0 12px;
+    }
+
     .btn-container {
         padding: 0 0.5rem;
+        top: 28%;
     }
 
     .btn-container button {
-        width: 45px;
-        height: 45px;
-        font-size: 18px;
+        width: 50px;
+        height: 50px;
+        font-size: 20px;
     }
 
     .showing-now {
@@ -1773,6 +1784,7 @@ footer h1 a img {
     .navbar {
         justify-content: space-between;
         height: 8vh;
+        padding: 0 10px;
     }
 
 
@@ -1829,21 +1841,24 @@ footer h1 a img {
     #watchStyling button {
         border: none;
         border-radius: 20px;
-        background-color: white;
-        padding: 10px 20px;
+        background: #ffcc00;
+        padding: 10px 25px;
         width: fit-content;
-        height: 6vh;
-        font-size: 16px;
+        height: auto;
+        font-size: 14px;
+        font-weight: 700;
+        color: #111;
     }
 
     .btn-container {
         padding: 0 0.5rem;
+        top: 25%;
     }
 
     .btn-container button {
-        width: 40px;
-        height: 40px;
-        font-size: 16px;
+        width: 45px;
+        height: 45px;
+        font-size: 18px;
     }
 
     .modal-container {
