@@ -87,8 +87,24 @@ function showError(message) {
     showModal(message, { type: 'error', title: 'Error' });
 }
 
+// Reset submit button to original state
+function resetSubmitButton() {
+    const btn = document.getElementById('submitBtn') || document.querySelector('button[type="submit"]');
+    if (btn && btn.dataset.originalContent) {
+        btn.innerHTML = btn.dataset.originalContent;
+        btn.disabled = false;
+    }
+}
+
 // Initialize Paystack payment
 function initializePaystackPayment() {
+    // Check if Paystack is loaded
+    if (typeof PaystackPop === 'undefined') {
+        showError('Payment service is unavailable. Please refresh the page and try again.');
+        resetSubmitButton();
+        return;
+    }
+
     const email = document.getElementById('email').value.trim();
     const firstName = document.getElementById('firstName').value.trim();
     const lastName = document.getElementById('lastName').value.trim();
@@ -133,11 +149,7 @@ function initializePaystackPayment() {
         },
         onClose: function() {
             // Payment window closed - restore button
-            const btn = document.getElementById('submitBtn') || document.querySelector('button[type="submit"]');
-            if (btn && btn.dataset.originalContent) {
-                btn.innerHTML = btn.dataset.originalContent;
-                btn.disabled = false;
-            }
+            resetSubmitButton();
             showError('Payment cancelled. Please try again.');
         }
     });

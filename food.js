@@ -258,14 +258,6 @@ function processCheckout() {
   
   // Redirect to checkout page
   window.location.href = "checkout.html";
-  
-  // Close cart sidebar
-  document.getElementById("cartSidebar").classList.remove("active");
-  
-  // Clear cart
-  CartUtils.clearCart();
-  updateCartDisplay();
-  updateCartCount();
 }
 
 // Setup mobile menu
