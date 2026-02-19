@@ -695,32 +695,51 @@ body {
 
 /* --- Responsive --- */
 @media (max-width: 768px) {
+  .movie-modal {
+    padding: 0.5rem;
+    align-items: center;
+  }
+
   .movie-modal-content {
-    width: 90%;
-    margin: 1rem;
-    padding: 1.5rem;
+    width: 92%;
+    max-height: 85vh;
+    overflow-y: auto;
+    margin: auto;
+    padding: 1rem;
   }
 
   .movie-modal-body {
     flex-direction: column;
     text-align: center;
+    gap: 1rem;
   }
 
   .movie-modal-body img {
-    width: 80%;
-    max-width: 300px;
+    width: 50%;
+    max-width: 180px;
+  }
+
+  .movie-modal-info {
+    min-width: unset;
   }
 
   .movie-modal-info h2 {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
+  }
+
+  .movie-modal-info p {
+    font-size: 0.9rem;
+    line-height: 1.5;
   }
 
   .movie-buttons {
     flex-direction: column;
+    gap: 0.5rem;
   }
 
   .movie-buttons button {
     width: 100%;
+    padding: 10px 20px;
   }
 }
 
@@ -767,17 +786,49 @@ body {
 @media (max-width: 430px) {
   .movie-modal-content {
     width: 95%;
-    margin: 0.5rem;
-    padding: 1rem;
+    max-height: 80vh;
+    margin: auto;
+    padding: 0.8rem;
+  }
+
+  .movie-modal-body img {
+    width: 40%;
+    max-width: 140px;
   }
 
   .movie-modal-info h2 {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
+  }
+
+  .movie-modal-info p {
+    font-size: 0.85rem;
   }
 
   .movie-buttons button {
-    padding: 0.8rem 1.5rem;
+    padding: 0.7rem 1rem;
+    font-size: 0.85rem;
+  }
+
+  #upcoming-film {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.8rem;
+  }
+
+  #upcoming-film div {
+    border-width: 3px;
+    border-radius: 15px;
+  }
+
+  #upcoming-film img {
+    border-radius: 12px;
+  }
+
+  #upcoming-film h5 {
     font-size: 0.9rem;
+  }
+
+  #upcoming-film h6 {
+    font-size: 0.75rem;
   }
 
   .trailer-content {
@@ -1246,11 +1297,20 @@ footer h1 a img {
 
     #upcoming-film {
         grid-template-columns: repeat(2, 1fr);
-        gap: 1rem;
+        gap: 0.8rem;
     }
 
     #upcoming-film div {
-        border: 5px solid black;
+        border: 4px solid black;
+        border-radius: 20px;
+    }
+
+    #upcoming-film h5 {
+        font-size: 1rem;
+    }
+
+    #upcoming-film h6 {
+        font-size: 0.85rem;
     }
 
     .noodles-cont {
@@ -1392,11 +1452,27 @@ footer h1 a img {
 
     #upcoming-film {
         grid-template-columns: repeat(2, 1fr);
-        gap: 1rem;
+        gap: 0.8rem;
+        width: 98%;
     }
 
     #upcoming-film div {
-        border: 5px solid black;
+        border: 4px solid black;
+        border-radius: 20px;
+    }
+
+    #upcoming-film img {
+        border-radius: 16px;
+    }
+
+    #upcoming-film h5 {
+        font-size: 1rem;
+        margin: 0.3rem 0;
+    }
+
+    #upcoming-film h6 {
+        font-size: 0.8rem;
+        margin-bottom: 0.5rem;
     }
 
     .noodles-cont {
